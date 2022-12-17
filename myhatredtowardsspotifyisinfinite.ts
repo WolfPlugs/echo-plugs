@@ -32,9 +32,9 @@ interface IMessageCreate {
 }
 
 async function youtuberify(lmao: string): Promise<string> {
-    const res = await fetch(`https://youtuber.exhq.workers.dev/${lmao}`);
-    const url = (await res.json()) as string;
-    return url;
+    const res = await fetch(`https://api.obamabot.me/v2/text/youtube?url=${lmao}`);
+    const json = await res.json();
+    return json.url as string;
 }
 
 const getSubString = (s: string) => {
